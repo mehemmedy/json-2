@@ -5,7 +5,9 @@ let sebet = [];
 let mehsullar=[]
 const sebeticmehsullar = document.getElementById("sebeticmehsullar");
 const total = document.getElementById("total");
-fetch("https://fakestoreapi.com/products")
+function mehsullarTezele(){
+  cardcontainer.innerHTML =''
+  fetch("https://69b94968e69653ffe6a73340.mockapi.io/mehemmed/mehemmed")
   .then((res) => res.json())
   .then((data) => {
     mehsullar = data;
@@ -31,7 +33,8 @@ fetch("https://fakestoreapi.com/products")
 `;
     });
   });
-
+}
+mehsullarTezele()
 function sebetRender() {
   sebetic.classList.toggle("hidden");
 }
@@ -113,4 +116,8 @@ function price(){
     let totalPay=0
     sebet.map(item=>totalPay+=item.price*item.count)
     total.innerHTML=totalPay.toFixed(2)+'$'
+}
+
+function getAdd(){
+  window.location.href='Add.htm'
 }
